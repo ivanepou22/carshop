@@ -1,0 +1,18 @@
+.hero-container {
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: 22% 72%;
+    height: 70vh;
+    gap: 1rem;
+    justify-content: center;
+    /* background-color: rgb(231, 226, 226); */
+}
+
+.menu-side .slide-side {
+    height: 100%;
+    width: 100%;
+}
+
+.menu-side {
+    margin-left: 25%;
+}

@@ -1,0 +1,120 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top:0; left:0; right:0;
+    padding:.8rem 9%;
+    z-index: 1000;
+    background: #fff;
+    border-bottom: #ffee80 solid 1px;
+}
+
+.header .logo{
+    font-size: 1.5rem;
+    color:var(--black);
+    font-weight: bold;
+}
+
+.header .logo span{
+    color:var(--yellow);
+}
+
+.header .navbar a{
+    margin:0 1rem;
+    font-size: 1.2rem;
+    color:var(--black);
+}
+
+.header .navbar a:hover{
+    color:var(--yellow);
+}
+
+.header-container {
+    display: flex;
+    flex: 1;
+    gap: 1.5rem;
+}
+
+/* Search Bar */
+.header form{
+    height:2.5rem;
+    background:#fff;
+    color:var(--black);
+    overflow:hidden;
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    margin-left: 5rem;
+}
+
+.header form input[type="text"]{
+    height: 100%;
+    width:100%;
+    padding:0 3rem;
+    font-size: .9rem;
+    border-radius: 5px;
+    margin: 0 0 0 1rem;
+    border: 1px solid rgb(194, 188, 188);
+    text-transform: none;
+    background:url("../images/search.svg") no-repeat;
+    background-size: 2rem;
+    background-position: left;
+    background-repeat: no-repeat;
+    color: black;
+}
+
+.header form input[type="submit"]{
+    height: 100%;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 0 .8rem;
+    font-weight: 600;
+    border-radius: 5px;
+    color:var(--black);
+    background: var(--light-yellow);
+    cursor: pointer;
+}
+
+.header form input[type="submit"]:hover{
+    background: var(--yellow);
+}
+
+#login-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon_container {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+.icon_container:hover {
+    color: #e08721;
+    font-size: .8rem;
+}
+.header-icons{
+    font-size: 1.5rem;
+    color:var(--black);
+}
+.header-icons:hover {
+    color: #e08721;
+    font-size: 1.7rem;
+}
+
+.icon_container span {
+    font-size: .7rem;
+    font-weight: 700;
+}
+
+.header.active{
+    padding:2rem 9%;
+    box-shadow: var(--box-shadow);
+}
+
+#menu-btn{
+    font-size: 2.5rem;
+    color:var(--light-color);
+    display: none;
+}

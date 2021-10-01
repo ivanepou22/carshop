@@ -1,0 +1,41 @@
+.mySwiper {
+    margin: 1rem 0 1rem -3rem
+}
+.featured-swiper-slide {
+    padding:1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    /* box-shadow: var(--box-shadow);
+    border:var(--border); */
+    border-radius: .5rem;
+}
+
+
+.featured-swiper-slide img{
+    height: 11rem;
+}
+
+.featured-swiper-slide:hover img{
+    transform: scale(.9);
+}
+
+.featured .featured-swiper-slide .content h3{
+    font-size: 1rem;
+    line-height: normal;
+    color:var(--black);
+}
+
+/* .featured .featured-swiper-slide .content .stars{
+    padding:1rem 0;
+} */
+
+/* .featured .featured-swiper-slide  .content .stars i{
+    font-size: 1.7rem;
+    color:var(--yellow);
+} */
+
+.featured .featured-swiper-slide  .content .price{
+    font-size: .8rem;
+    color:var(--black);
+}
+

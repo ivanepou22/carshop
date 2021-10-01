@@ -29,10 +29,9 @@
     padding:1rem 0;
 } */
 
-/* .featured .featured-swiper-slide  .content .stars i{
-    font-size: 1.7rem;
+.content .stars{
     color:var(--yellow);
-} */
+}
 
 .featured .featured-swiper-slide  .content .price{
     font-size: .8rem;

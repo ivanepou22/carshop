@@ -4,7 +4,7 @@ import {AiOutlineShoppingCart, AiOutlineMenu} from 'react-icons/ai'
 import {BiHelpCircle} from 'react-icons/bi'
 import {HiOutlineUser} from 'react-icons/hi'
 
-function Header() {
+function Header({email}) {
     return (
         <header className="header">
             <div id="menu-btn"> <AiOutlineMenu /></div>
@@ -19,7 +19,11 @@ function Header() {
                 <div id="login-container">
                     <div className="icon_container">
                         <HiOutlineUser  className ="header-icons" />
-                        <span>Account</span>
+                        <span>
+                            {
+                                email !== "" ? (email): 'Account'
+                            }
+                        </span>
                     </div>
                     <div className="icon_container">
                         <BiHelpCircle className ="header-icons" />

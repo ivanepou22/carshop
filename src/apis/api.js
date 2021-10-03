@@ -337,3 +337,10 @@ export  let customerFeedBack = [
         comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam incidunt quod praesentium iusto id autem possimus assumenda at ut saepe.'
     }
 ];
+
+export let credentials =
+    {
+        id: 1,
+        email: 'admin@admin.com',
+        password: 'admin123'
+    }

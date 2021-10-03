@@ -1,0 +1,67 @@
+.swiper-container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.vehicles .vehicles-slider .swiper-container img{
+    width:100%;
+    transform: scale(.8);
+    opacity: .5;
+}
+
+.vehicles .vehicles-slider .swiper-container .content{
+    padding-top: 1rem;
+    transform: scale(0);
+}
+
+.vehicles .vehicles-slider .swiper-slide-active .content{
+    transform: scale(1);
+}
+
+.vehicles .vehicles-slider .swiper-slide-active img{
+    transform: scale(1);
+    opacity: 1;
+}
+
+.vehicles .vehicles-slider .swiper-container .content h3{
+    font-size: 1rem;
+    line-height: normal;
+    color:var(--black);
+}
+
+.vehicles .vehicles-slider .swiper-container .content .price{
+    font-size: .9rem;
+    color:var(--yellow);
+    padding:.5rem 0;
+    font-weight: bolder;
+}
+
+.vehicles .vehicles-slider .swiper-container .content .price span{
+    color:var(--light-color);
+    font-size: .9rem;
+    font-weight: normal;
+}
+
+.vehicles .vehicles-slider .swiper-container .content p{
+    font-size: .9rem;
+    color:var(--light-color);
+    padding: 1rem 0;
+    padding-top: 1rem;
+    border-top: var(--border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vehicles .vehicles-slider .swiper-container .content span{
+    font-size: .9rem;
+    color:var(--black);
+    padding:0 .5rem;
+}
+
+.vehicles .vehicles-slider .swiper-container .content .fa_circle {
+    font-size: .9rem;
+    color:var(--yellow);
+}

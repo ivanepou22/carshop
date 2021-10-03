@@ -15,13 +15,18 @@ SwiperCore.use([Pagination,Navigation]);
 function Swipeslider(props) {
     return (
         <div>
-            <Swiper slidesPerView={3} spaceBetween={30} slidesPerGroup={3} loop={true} loopFillGroupWithBlank={true} pagination={{
-            "clickable": true
-            }} navigation={false}
-            autoplay={{
-                delay: 5000,
-                pauseOnMouseEnter: true
-            }}
+            <Swiper slidesPerView={3}
+                spaceBetween={30}
+                slidesPerGroup={3}
+                loop={true}
+                loopFillGroupWithBlank={true}
+                pagination={{
+                "clickable": true
+                }} navigation={false}
+                autoplay={{
+                    delay: 5000,
+                    pauseOnMouseEnter: false
+                }}
             className="mySwiper">
                { props.cars.map(car => (
                     <SwiperSlide key={car.id}>
@@ -36,6 +41,7 @@ function Swipeslider(props) {
                                 car.price.toLocaleString('en-US', {
                                     style: 'currency',
                                     currency: 'USD',
+                                    maximumFractionDigits: 0,
                                   })
                                 }</div>
                                 <a href="/#" className="btn">check out</a>

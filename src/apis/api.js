@@ -21,6 +21,14 @@ import veh10 from "../images/car10.png";
 import veh11 from "../images/car11.png";
 import veh12 from "../images/car12.png"
 
+//customers
+import image1 from '../images/pic-1.png';
+import image2 from '../images/pic-2.png';
+import image3 from '../images/pic-3.png';
+import image4 from '../images/pic-4.png';
+import image5 from '../images/pic-5.png';
+import image6 from '../images/pic-6.png';
+
 export let companyInfo = [
     {
         id : 1,
@@ -199,13 +207,133 @@ export let featuredCarsSecond = [
         name: 'MG ZV SUV',
         image: veh2,
         price : 67000,
-        stars : 5
+        stars : 2
     },
     {
         id: 12,
         name: 'Chevrolet Traverse',
         image: veh8,
         price : 44000,
-        stars : 5
+        stars : 3
     }
 ]
+
+export let latestCars = [
+    {
+        id : 1,
+        image : car1,
+        price : 125000,
+        description : '',
+        carName: 'Porche 911 GT3',
+        category: 'New',
+        make: '2021',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '235mph'
+    },
+    {
+        id : 2,
+        image : car2,
+        price : 65000,
+        description : '',
+        carName: 'Porsche Cayman s',
+        category: 'Used',
+        make: '2019',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '200mph'
+    },
+    {
+        id : 3,
+        image : car3,
+        price : 105000,
+        description : '',
+        carName: 'Porsche 911 Carrera T',
+        category: 'New',
+        make: '2021',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '235mph'
+    },
+    {
+        id : 4,
+        image : car4,
+        price : 85000,
+        description : '',
+        carName: 'Porsche 911 Carrera 4S',
+        category: 'Used',
+        make: '2020',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '235mph'
+    },
+    {
+        id : 5,
+        image : car5,
+        price : 15000,
+        description : '',
+        carName: '2008 Porsche Cayenne Turbo',
+        category: 'Used',
+        make: '2008',
+        drive: 'Manual',
+        engine: 'Diesel',
+        speed: '180mph'
+    },
+    {
+        id : 6,
+        image : car6,
+        price : 55000,
+        description : '',
+        carName: 'Porsche Cayman GT4',
+        category: 'Used',
+        make: '2016',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '205mph'
+    }
+]
+
+export  let customerFeedBack = [
+    {
+        id: 1,
+        fullName: 'John Parker',
+        image: image1,
+        stars: 5,
+        comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam incidunt quod praesentium iusto id autem possimus assumenda at ut saepe.'
+    },
+    {
+        id: 2,
+        fullName: 'Ivan Smith',
+        image: image2,
+        stars: 2,
+        comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam incidunt quod praesentium iusto id autem possimus assumenda at ut saepe.'
+    },
+    {
+        id: 3,
+        fullName: 'Dyron Walker',
+        image: image3,
+        stars: 4,
+        comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam incidunt quod praesentium iusto id autem possimus assumenda at ut saepe.'
+    },
+    {
+        id: 4,
+        fullName: 'Mary Lean',
+        image: image4,
+        stars: 3,
+        comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam incidunt quod praesentium iusto id autem possimus assumenda at ut saepe.'
+    },
+    {
+        id: 5,
+        fullName: 'Jesca Jones',
+        image: image5,
+        stars: 5,
+        comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam incidunt quod praesentium iusto id autem possimus assumenda at ut saepe.'
+    },
+    {
+        id: 6,
+        fullName: 'Chris Marrick',
+        image: image6,
+        stars: 4,
+        comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam incidunt quod praesentium iusto id autem possimus assumenda at ut saepe.'
+    }
+];

@@ -24,7 +24,7 @@ function Swipeslider(props) {
                 "clickable": true
                 }} navigation={false}
                 autoplay={{
-                    delay: 5000,
+                    delay: 8000,
                     pauseOnMouseEnter: false
                 }}
             className="mySwiper">

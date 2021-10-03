@@ -29,8 +29,8 @@ function Hero() {
         loop={true}
         pagination={{"clickable": true}}
         autoplay={{
-            delay: 5000,
-            pauseOnMouseEnter: true
+            delay: 6000,
+            pauseOnMouseEnter: false
         }}
         navigation={false}
         className="swiper">

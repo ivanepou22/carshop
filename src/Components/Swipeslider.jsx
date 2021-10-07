@@ -2,6 +2,7 @@ import React from 'react'
 import './Swipeslider.css'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import {Link} from "react-router-dom";
 
 // import Swiper core and required modules
 import SwiperCore, {
@@ -22,18 +23,24 @@ function Swipeslider(props) {
                 loopFillGroupWithBlank={true}
                 pagination={{
                 "clickable": true
-                }} navigation={false}
+                }} navigation={true}
                 autoplay={{
-                    delay: 8000,
+                    delay: 9000,
                     pauseOnMouseEnter: false
                 }}
             className="mySwiper">
                { props.cars.map(car => (
                     <SwiperSlide key={car.id}>
+                        <Link key={car.id}
+                                        to={{
+                                            pathname: `/product/${car.id}`,
+                                            state: car,
+                                            }}
+                                    >
                         <div className="featured-swiper-slide box">
                             <img src={car.image} alt="" />
                             <div className="content">
-                                <h3>{car.name}</h3>
+                                <h3>{car.carName}</h3>
                                 <div className="stars">
                                     <Stars carStars={car.stars} />
                                 </div>
@@ -44,9 +51,10 @@ function Swipeslider(props) {
                                     maximumFractionDigits: 0,
                                   })
                                 }</div>
-                                <a href="/#" className="btn">check out</a>
+                                <button className="btn">check out</button>
                             </div>
                         </div>
+                        </Link>
                     </SwiperSlide>
                 ))
                }

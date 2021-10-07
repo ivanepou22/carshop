@@ -8,7 +8,7 @@ function Header({email}) {
     return (
         <header className="header">
             <div id="menu-btn"> <AiOutlineMenu /></div>
-            <a href="/Home" className="logo"> <span>Walker</span>Auto </a>
+            <a href="/" className="logo"> <span>Walker</span>Auto </a>
             <div className="header-container">
 
                 <form action="">

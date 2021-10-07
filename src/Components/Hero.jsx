@@ -2,7 +2,7 @@ import React from 'react';
 import './Hero.css';
 // Import Swiper React components
 import {Swiper, SwiperSlide } from "swiper/react";
-import {slideImage} from '../apis/api';
+import {carStock} from '../apis/api';
 
 // Import Swiper styles
 import "swiper/swiper-bundle.min.css"
@@ -21,7 +21,8 @@ import SwiperCore, {
 SwiperCore.use([Pagination,Navigation,Autoplay]);
 
 function Hero() {
-
+  const carStocklen = carStock.length;
+  const sliderImages = carStock.slice(carStocklen-6, carStocklen)
   return (
     <div className="Hero">
         <Swiper slidesPerView={1}
@@ -30,12 +31,12 @@ function Hero() {
         pagination={{"clickable": true}}
         autoplay={{
             delay: 6000,
-            pauseOnMouseEnter: false
+            // pauseOnMouseEnter: false
         }}
         navigation={false}
         className="swiper">
           {
-            slideImage.map(slider => (
+            sliderImages.map(slider => (
               <SwiperSlide className="swiper-slide" key={slider.id}>
                 <img src={slider.image} alt=""/>
               </SwiperSlide>

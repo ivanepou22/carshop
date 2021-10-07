@@ -1,0 +1,131 @@
+
+.product {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 1rem;
+    font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+  background-color: rgba(241, 238, 238, 0.973);
+}
+.product-container-left {
+    background-color: white !important;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-radius: 5px;
+}
+.product-image {
+    width: 100%;
+    padding: 1rem;
+}
+.product-image img {
+    width: 100%;
+}
+.product-info {
+    padding: 1rem 20px 1rem 20px;
+    border-left: 1xp solid rgb(150, 146, 146);
+
+}
+.product-info h1 {
+    font-size: 1.3rem;
+    font-weight: normal;
+    padding: 10px;
+}
+
+.car-desc {
+    font-size: .9rem;
+    color:black;
+    padding: .5rem 0 1rem 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.fa_circle {
+    font-size: .9rem;
+    color:var(--yellow);
+}
+
+.product-info .product-star{
+    color:var(--yellow);
+    padding: 0 0 1rem 10px;
+    font-size: 1rem;
+}
+
+
+.cart-btn {
+    border-top: 1px solid rgb(235, 232, 232);
+    padding: .5rem 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(235, 232, 232);
+}
+
+.cart-btn .price {
+    font-size: 1rem;
+    color:var(--black);
+    font-weight: 600;
+}
+
+.cart-button {
+    width: 100%;
+    display: flex;
+    background-color: var(--yellow);
+    border-radius: 1px;
+    box-shadow: var(--box-shadow);
+}
+
+.cart-button .btn-icon {
+    display: flex;
+    justify-self: flex-start;
+    align-self: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 30%;
+}
+
+.cart-button span {
+    display: flex;
+    justify-self: flex-end;
+    align-self: center;
+    text-transform: uppercase;
+}
+
+.product-shipping {
+    padding: 10px 0;
+    font-size: .6rem;
+}
+
+.promotions {
+    padding: 10px;
+    font-size: .6rem;
+    color: blue;
+    display: flex;
+    flex-direction: column;
+}
+.promotions p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.promotions p{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.promotion-icons {
+    color: var(--yellow);
+    font-size: 1.5rem;
+}
+
+.product-container-right {
+    background-color: white !important;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}

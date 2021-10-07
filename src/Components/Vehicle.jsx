@@ -1,6 +1,6 @@
 import React from 'react';
 import './Vehicle.css';
-
+import {Link} from "react-router-dom";
 // Import Swiper React components
 import {Swiper, SwiperSlide } from "swiper/react";
 
@@ -15,20 +15,30 @@ import SwiperCore, {
 SwiperCore.use([Pagination,Navigation,Autoplay]);
 
 function Vehicle(props) {
+    const latestCars = props.latest;
     return (
             <Swiper slidesPerView={3}
                 spaceBetween={30}
                 centeredSlides={true}
-                loop={true} pagination={{
+                loop={true}
+                pagination={{
                     "clickable": true
                 }}
                 autoplay={{
                     delay: 8000
                 }}
+                navigation={false}
               className="mySwiper">
                   {
-                      props.latest.map(vehicle => (
+                      latestCars.slice(latestCars.length-6, latestCars.length).map(vehicle => (
+
                         <SwiperSlide key={vehicle.id}>
+                            <Link key={vehicle.id}
+                                        to={{
+                                            pathname: `/product/${vehicle.id}`,
+                                            state: vehicle,
+                                            }}
+                                    >
                             <div className="swiper-container">
                                 <img src={vehicle.image} alt="" />
                                 <div className="content">
@@ -49,9 +59,13 @@ function Vehicle(props) {
                                         <FaCircle className="fa_circle" /> <span> {vehicle.engine} </span>
                                         <FaCircle className="fa_circle" /> <span> {vehicle.speed} </span>
                                     </p>
-                                    <a href="/#" className="btn">check out</a>
+                                    <div>
+                                        <button  className="btn">check out</button>
+                                    </div>
+
                                 </div>
                             </div>
+                            </Link>
                         </SwiperSlide>
                       ))
                   }

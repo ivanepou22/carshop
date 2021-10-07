@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import './Login.css'
 import {credentials} from "../apis/api";
 
-
 function Login({getDetails}) {
     let history = useHistory();
     const [details, setDetails] = useState({email : "", password : ""});

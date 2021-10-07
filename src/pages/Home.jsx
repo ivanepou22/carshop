@@ -1,10 +1,10 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import './Home.css';
 import Info from '../Components/Info';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
-import {companyInfo, ourService,featuredCarsFirst,featuredCarsSecond,latestCars,customerFeedBack} from '../apis/api';
+import {companyInfo, ourService,customerFeedBack,carStock} from '../apis/api';
 import Services from '../Components/Services';
 import Contact from '../Components/Contact';
 import Subscribe from '../Components/Subscribe';
@@ -15,9 +15,9 @@ import Vehicle from '../Components/Vehicle';
 import Review from '../Components/Review';
 
 function Home({authenticated, email}) {
-    if(!authenticated) {
-        return <Redirect to="/" />
-    }
+    // if(!authenticated) {
+    //     return <Redirect to="/" />
+    // }
     return (
         <>
         <Header  email={email}/>
@@ -41,7 +41,7 @@ function Home({authenticated, email}) {
             <section className="vehicles">
                 <h1 className="heading"> Latest <span>Arrivals</span> </h1>
                 <div className="vehicles-slider">
-                        <Vehicle latest={latestCars} />
+                        <Vehicle latest={carStock} />
                 </div>
             </section>
 
@@ -57,8 +57,8 @@ function Home({authenticated, email}) {
             </section>
             <section className="featured">
                 <h1 className="heading"> <span>featured</span> cars </h1>
-                <Swipeslider cars={featuredCarsFirst} />
-                <Swipeslider cars={featuredCarsSecond} />
+                <Swipeslider cars={carStock} />
+                {/* <Swipeslider cars={featuredCarsSecond} /> */}
             </section>
             <Subscribe />
 

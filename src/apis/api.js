@@ -128,99 +128,153 @@ export let slideImage = [
     }
 ]
 
-export let featuredCarsFirst = [
+export let carStock = [
     {
         id: 1,
-        name: 'Mercedes-Benz SL R231',
+        carName: 'Mercedes-Benz SL R231',
         image: veh1,
         price : 55000,
-        stars : 5
+        stars : 5,
+        category: 'New',
+        make: '2021',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '250mph'
     },
     {
         id: 2,
-        name: 'MG ZS SUV',
+        carName: 'MG ZS SUV',
         image: veh2,
         price : 65000,
-        stars : 5
+        stars : 5,
+        category: 'Used',
+        make: '2019',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '180mph'
     },
     {
         id: 3,
-        name: 'Focus ST',
+        carName: 'Focus ST',
         image: veh3,
         price : 45000,
-        stars : 5
+        stars : 5,
+        category: 'New',
+        make: '2021',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '220mph'
     },
     {
         id: 4,
-        name: 'Audi e-tron Quattro',
+        carName: 'Audi e-tron Quattro',
         image: veh4,
         price : 84000,
-        stars : 5
+        stars : 5,
+        category: 'Used',
+        make: '2020',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '235mph'
     },
     {
         id: 5,
-        name: 'Kia Sportage',
+        carName: 'Kia Sportage',
         image: veh5,
         price : 75000,
-        stars : 4
+        stars : 4,
+        category: 'New',
+        make: '2021',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '200mph'
     },
     {
         id: 6,
-        name: '2018 Honda Civic',
+        carName: '2018 Honda Civic',
         image: veh6,
         price : 35000,
-        stars : 5
-    }
-]
-
-export let featuredCarsSecond = [
+        stars : 5,
+        category: 'Used',
+        make: '2019',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '200mph'
+    },
     {
         id: 7,
-        name: '2018 Ford Mustang GT',
+        carName: '2018 Ford Mustang GT',
         image: veh11,
         price : 156000,
-        stars : 5
+        stars : 5,
+        category: 'Used',
+        make: '2020',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '180mph'
     },
     {
         id: 8,
-        name: 'Chrysler 300s',
+        carName: 'Chrysler 300s',
         image: veh12,
         price : 256000,
-        stars : 4
+        stars : 4,
+        category: 'New',
+        make: '2021',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '230mph'
     },
     {
         id: 9,
-        name: '2020 Ford Mustang',
+        carName: '2020 Ford Mustang',
         image: veh10,
         price : 176000,
-        stars : 5
+        stars : 5,
+        category: 'Used',
+        make: '2020',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '200mph'
     },
     {
         id: 10,
-        name: '2020 Kia SUV',
+        carName: '2020 Kia SUV',
         image: veh7,
         price : 46000,
-        stars : 4
+        stars : 4,
+        category: 'Used',
+        make: '2019',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '200mph'
     },
     {
         id: 11,
-        name: 'MG ZV SUV',
+        carName: 'MG ZV SUV',
         image: veh2,
         price : 67000,
-        stars : 2
+        stars : 2,
+        category: 'Used',
+        make: '2019',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '200mph'
     },
     {
         id: 12,
-        name: 'Chevrolet Traverse',
+        carName: 'Chevrolet Traverse',
         image: veh8,
         price : 44000,
-        stars : 3
-    }
-]
-
-export let latestCars = [
+        stars : 3,
+        category: 'Used',
+        make: '2019',
+        drive: 'Automatic',
+        engine: 'Petrol',
+        speed: '200mph'
+    },
     {
-        id : 1,
+        id : 13,
         image : car1,
         price : 125000,
         description : '',
@@ -229,10 +283,11 @@ export let latestCars = [
         make: '2021',
         drive: 'Automatic',
         engine: 'Petrol',
-        speed: '235mph'
+        speed: '235mph',
+        stars: 5
     },
     {
-        id : 2,
+        id : 14,
         image : car2,
         price : 65000,
         description : '',
@@ -241,10 +296,11 @@ export let latestCars = [
         make: '2019',
         drive: 'Automatic',
         engine: 'Petrol',
-        speed: '200mph'
+        speed: '200mph',
+        stars: 4
     },
     {
-        id : 3,
+        id : 15,
         image : car3,
         price : 105000,
         description : '',
@@ -253,10 +309,11 @@ export let latestCars = [
         make: '2021',
         drive: 'Automatic',
         engine: 'Petrol',
-        speed: '235mph'
+        speed: '235mph',
+        stars: 5
     },
     {
-        id : 4,
+        id : 16,
         image : car4,
         price : 85000,
         description : '',
@@ -265,10 +322,11 @@ export let latestCars = [
         make: '2020',
         drive: 'Automatic',
         engine: 'Petrol',
-        speed: '235mph'
+        speed: '235mph',
+        stars: 5
     },
     {
-        id : 5,
+        id : 17,
         image : car5,
         price : 15000,
         description : '',
@@ -277,10 +335,11 @@ export let latestCars = [
         make: '2008',
         drive: 'Manual',
         engine: 'Diesel',
-        speed: '180mph'
+        speed: '180mph',
+        stars: 3
     },
     {
-        id : 6,
+        id : 18,
         image : car6,
         price : 55000,
         description : '',
@@ -289,8 +348,14 @@ export let latestCars = [
         make: '2016',
         drive: 'Automatic',
         engine: 'Petrol',
-        speed: '205mph'
+        speed: '205mph',
+        stars: 5
     }
+]
+export let featuredCarsFirst = [];
+export let featuredCarsSecond = [];
+export let latestCars = [
+
 ]
 
 export  let customerFeedBack = [

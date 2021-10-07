@@ -68,9 +68,11 @@
 
 .login-form-container form h3{
     padding-bottom:.5rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color:var(--black);
-    text-transform: uppercase;
+    text-transform: capitalize;
+    font-style: italic;
+
 }
 
 .login-form-container  div {

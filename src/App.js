@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import {useState} from 'react';
 import Product from './Components/Product';
+import Admin from './pages/admin/Admin';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/" component={() => <Home authenticated={status} email={email}/>} />
           <Route exact path="/login" component={() => <Login getDetails={getDetails} />} />
           <Route exact path="/product/:id" component={Product} />
+          <Route exact path="/admin" component={Admin} />
         </Switch>
       </Router>
     </div>

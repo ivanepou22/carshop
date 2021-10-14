@@ -1,0 +1,36 @@
+.order-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.order-details {
+    margin-top: 3rem;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.order-details table {
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.order-details table thead tr th {
+    text-align: left;
+}
+
+.data-row td {
+    border-top: 1px solid rgb(238, 236, 236);
+    border-bottom: 1px solid rgb(238, 236, 236);
+    padding: 4px 0 4px 0;
+}
+
+.order-details table tfoot {
+    font-weight: 600;
+    border: 1xp solid gray;
+}
+
+.order-details table tfoot tr td{
+    border-bottom: 2px solid rgb(255, 255, 180);
+}

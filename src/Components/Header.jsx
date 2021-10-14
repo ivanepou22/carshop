@@ -29,9 +29,10 @@ function Header({email}) {
                         <BiHelpCircle className ="header-icons" />
                         <span>Help</span>
                     </div>
-                    <div className="icon_container">
+                    <div className="icon_container cart">
                         <AiOutlineShoppingCart className ="header-icons"/>
                         <span>Cart</span>
+                        <span className="cart-quantity">0</span>
                     </div>
                 </div>
 

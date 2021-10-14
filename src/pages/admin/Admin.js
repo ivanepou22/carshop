@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Admin.css';
 import Table from './Table';
 import Header from './Header'
-// import axios from 'axios';
+import axios from 'axios';
 // https://martserver.herokuapp.com/api/v1/product - all products
 // https://martserver.herokuapp.com/api/v1/product/11 - a specific
 
@@ -13,57 +13,53 @@ function Admin() {
     const [loading, setloading] = useState(true);
 
     useEffect(  () => {
-        fetch(`${url}`)
-      .then((response) => response.json())
-      .then((json) => setOrders(json))
-      .catch((e)=>console.log(e))
-      .finally(()=>setloading(false))
+
+    axios.get(url).then((response) => {
+        setOrders(response.data);
+      }).catch((error) => console.log(error))
+      .finally(() => setloading(false) );
+
     }, [])
 
-    const coloumhead = [
+    const columns = [
         {
-            name: 'Order Id',
-            selector: row => row.id,
-            sortable: true,
+            title: 'Order Id',
+            field: 'id'
         },
         {
-            name: 'Product',
-            selector: row => row.product,
-            sortable: true,
+            title: 'Product',
+            field: 'product',
         },
         {
-            name: 'Quantity',
-            selector: row => row.quantity,
-            sortable: true,
+            title: 'Quantity',
+            field: 'quantity',
         },
         {
-            name: 'User Id',
-            selector: row => row.user.id,
-            sortable: true,
+            title: 'User Id',
+            field: 'user.id',
         },
         {
-            name: 'User Name',
-            selector: row => row.user.name,
-            sortable: true,
+            title: 'User Name',
+            field: 'user.name',
         },
         {
-            name: 'User Email',
-            selector: row => row.user.email,
-            sortable: true,
+            title: 'User Email',
+            field: 'user.email',
         },
         {
-            name: 'Amount',
-            selector: row => row.amount,
-            sortable: true,
+            title: 'Amount',
+            field: 'amount',
+            type: 'currency',
         },
     ]
+
 
     return (
         <div className="admin-container">
             <Header />
             <section className="main-container">
                 {
-                    loading ? <p>Fetching data...</p>: <Table columns={coloumhead} data={orders} />
+                    loading ? <p>Fetching data...</p>: <Table columns={columns} data={orders} />
                 }
             </section>
         </div>

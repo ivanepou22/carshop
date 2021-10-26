@@ -2,7 +2,8 @@ import React from 'react'
 import './Header.css';
 import {AiOutlineShoppingCart, AiOutlineMenu} from 'react-icons/ai'
 import {BiHelpCircle} from 'react-icons/bi'
-import {HiOutlineUser} from 'react-icons/hi'
+import {RiNotification2Fill} from 'react-icons/ri'
+import {TiArrowSortedDown} from 'react-icons/ti'
 
 function Header({email}) {
     return (
@@ -18,20 +19,17 @@ function Header({email}) {
 
                 <div id="login-container">
                     <div className="icon_container">
-                        <HiOutlineUser  className ="header-icons" />
-                        <span>
-                            {
-                                email !== "" ? (email): 'Account'
-                            }
-                        </span>
+                        <TiArrowSortedDown  className ="header-icons" />
+                    </div>
+                    <div className="icon_container cart">
+                        <RiNotification2Fill className ="header-icons"/>
+                        <span className="cart-quantity">0</span>
                     </div>
                     <div className="icon_container">
                         <BiHelpCircle className ="header-icons" />
-                        <span>Help</span>
                     </div>
                     <div className="icon_container cart">
                         <AiOutlineShoppingCart className ="header-icons"/>
-                        <span>Cart</span>
                         <span className="cart-quantity">0</span>
                     </div>
                 </div>

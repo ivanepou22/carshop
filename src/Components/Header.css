@@ -4,7 +4,7 @@
     justify-content: space-between;
     position: fixed;
     top:0; left:0; right:0;
-    padding:.8rem 9%;
+    /* padding:.8rem 9%; */
     z-index: 1000;
     background: #fff;
     border-bottom: #ffee80 solid 1px;
@@ -95,12 +95,18 @@
     font-size: .8rem;
 }
 .header-icons{
-    font-size: 2.5rem;
+    font-size: 5rem;
     color:var(--black);
+    background-color: rgb(230, 225, 225);
+    border-radius: 50%;
+    padding: 7px;
+    height: 35px;
+    width: 35px;
 }
 .header-icons:hover {
     color: #e08721;
     font-size: 1.7rem;
+    background-color: rgb(187, 182, 182);
 }
 
 .icon_container span {
@@ -127,8 +133,8 @@
 .cart-quantity {
     background-color: var(--yellow);
     color: white;
-    height: 17px;
-    width: 17px;
+    height: 20px;
+    width: 20px;
     font-size: 1rem;
     display: flex;
     align-items: center;
@@ -136,5 +142,5 @@
     border-radius: 100%;
     position: absolute;
     margin-top: -20px;
-    margin-left: 12px;
+    margin-left: 20px;
 }

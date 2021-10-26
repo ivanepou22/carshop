@@ -23,6 +23,13 @@
     color:var(--light-color);
 }
 
+/* .footer .box-container .box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+} */
+
 .footer .box-container .box a > *:first-child{
     padding-right: .3rem;
     font-size: 1rem;

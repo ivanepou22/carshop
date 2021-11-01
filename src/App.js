@@ -6,6 +6,7 @@ import {useState} from 'react';
 import Product from './Components/Product';
 import Admin from './pages/admin/Admin';
 import OrderDetails from './pages/admin/OrderDetails';
+import Cart from './Components/Cart';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/product/:id" component={Product} />
           <Route exact path="/admin" component={Admin} />
           <Route exact path="/order/:id" component={OrderDetails} />
+          <Route exact path="/cart" component={Cart} />
         </Switch>
       </Router>
     </div>

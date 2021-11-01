@@ -403,9 +403,26 @@ export  let customerFeedBack = [
     }
 ];
 
-export let credentials =
+export let users =[
     {
         id: 1,
+        firstName: 'Ivan',
+        lastName: 'Epou',
         email: 'admin@admin.com',
-        password: 'admin123'
+        password: 'admin1234'
+    },
+    {
+        id: 2,
+        firstName: 'Dyron',
+        lastName: 'Epou',
+        email: 'dyron@admin.com',
+        password: 'dyron1234'
+    },
+    {
+        id: 3,
+        firstName: 'Smith',
+        lastName: 'Epou',
+        email: 'smith@admin.com',
+        password: 'smith1234'
     }
+]

@@ -1,44 +1,80 @@
-import React, {useState} from 'react'
+import { useState } from "react";
+import { useAuth } from "../Context/ContextApi";
 import { useHistory } from "react-router-dom";
 import './Login.css'
-import {credentials} from "../apis/api";
+import { FaFacebookF, FaTwitter } from 'react-icons/fa';
 
-function Login({getDetails}) {
-    let history = useHistory();
-    const [details, setDetails] = useState({email : "", password : ""});
-    const [error, setError] = useState("");
-    const onSubmitHandler = e => {
+function Login({ getDetails }) {
+    const [data, setData] = useState({
+        username: "",
+        password: "",
+    });
+    const { login, loading, error, setError } = useAuth();
+    const history = useHistory();
+
+    const handleChange = (e) => {
+        setData({ ...data, [e.target.name]: e.target.value });
+    };
+
+    const submit = (e) => {
         e.preventDefault();
+        setError("")
+        login(data);
 
-        if((credentials.email === details.email) && (credentials.password === details.password)) {
-            getDetails(details);
-            history.push('/home');
+        //Get the user Logged in.
+        const currentUser = JSON.parse(localStorage.getItem("user"));
+        if (!currentUser) {
+            return error
         } else {
-            setError('Details do not match, Try Again !!')
+            history.push('/')
         }
-    }
+    };
 
     return (
-        <div className="login-form-container">
-            <form onSubmit={onSubmitHandler} className="form-container">
-                <h3>user login</h3>
-                {
-                    (error !== "") ? ( <div className="error-container">{error}</div> ): ""
-                }
-                <input type="email" placeholder="email" className="box"  onChange={e => setDetails({...details, email: e.target.value})} value={details.email} />
-                <input type="password" placeholder="password" className="box" onChange={e => setDetails({...details, password: e.target.value})} value={details.password} />
-                <p> forget your password <a href="/#">click here</a> </p>
-                <div>
-                    <input  type="submit" value="login" className="btn" />
-                    {/* onClick={() => history.push('/home')} */}
+        <div className="login-container">
+            <div className="container-main" id="container">
+                <div className="form-container log-in-container">
+                    <form className="login-form" onSubmit={submit}>
+                        <h1 className="login-title">Login</h1>
+                        {error && <p style={{ color: 'red' }}>{error}</p>}
+                        <div className="social-container">
+                            <a href="/#" className="social login-anchor"><FaFacebookF /></a>
+                            <a href="/#" className="social login-anchor"> <FaTwitter /></a>
+                        </div>
+                        <span className="login-span">or use your account</span>
+                        <input
+                            type="text"
+                            placeholder="Username"
+                            className="login-input"
+                            name="username"
+                            value={data.username}
+                            onChange={handleChange}
+                            required />
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            className="login-input"
+                            name="password"
+                            value={data.password}
+                            onChange={handleChange}
+                            required
+                        />
+                        <a href="/#" className="login-anchor">Forgot your password?</a>
+                        <input type="submit" className="login-button" value={loading ? "loging in..." : "Login"} />
+                    </form>
                 </div>
-                <p>or login with</p>
-                <div className="buttons">
-                    <a href="/#" className="btn"> google </a>
-                    <a href="/#" className="btn"> facebook </a>
+                <div className="overlay-container">
+                    <div className="overlay">
+                        <div className="overlay-panel overlay-right">
+                            <h1 className="login-title">WalkerAuto Limited</h1>
+                            <p className="login-para">
+                                Welcome To WalkerAuto Limited the Automobile
+                                in Town.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <p> don't have an account <a href="/#">create one</a> </p>
-            </form>
+            </div>
         </div>
     )
 }

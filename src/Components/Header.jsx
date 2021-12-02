@@ -5,15 +5,18 @@ import { BiHelpCircle, BiBriefcaseAlt2, BiUserCheck } from 'react-icons/bi'
 import { RiUser2Line, RiLiveLine, RiArrowDownSLine, RiMoneyDollarCircleLine } from 'react-icons/ri'
 import { HiOutlineUser } from 'react-icons/hi';
 import { useAuth } from "../Context/ContextApi";
-import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom';
+//import { useHistory } from "react-router-dom";
 
 
 function Header() {
     //using the contextApi
     const { setUser, cart } = useAuth();
-    const history = useHistory();
+    //const history = useHistory();
     const user = JSON.parse(localStorage.getItem("user"));
     const cartItem = JSON.parse(localStorage.getItem("cart"));
+
+    console.log(cart)
 
     //handle Logout
     const handleLogout = () => {
@@ -24,7 +27,7 @@ function Header() {
     return (
         <header className="header">
             <div id="menu-btn"> <AiOutlineMenu /></div>
-            <a href="/" className="logo"> <span>Walker</span>Auto </a>
+            <Link to="/" className="logo"> <span>Walker</span>Auto </Link>
             <div className="header-container">
 
                 <form action="">
@@ -56,11 +59,11 @@ function Header() {
                             <ul className="nav__listitemdrop">
                                 {
                                     user ? ('') : (
-                                        <a href="/login" className='button-dropdown'>
+                                        <Link to="/login" className='button-dropdown'>
                                             <span>
                                                 Sign in
                                             </span>
-                                        </a>
+                                        </Link>
                                     )
                                 }
                                 <li>
@@ -163,9 +166,9 @@ function Header() {
                                 }
                                 <div className='button-dropdown'>
                                     <div className="li-contain go-to-cart">
-                                        <a href="/cart">
+                                        <Link to="/cart">
                                             <span>Go to Cart</span>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </ul>

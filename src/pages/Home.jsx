@@ -2,8 +2,6 @@ import React from 'react';
 // import { Redirect } from 'react-router-dom';
 import './Home.css';
 import Info from '../Components/Info';
-import Footer from '../Components/Footer';
-import Header from '../Components/Header';
 import { companyInfo, ourService, customerFeedBack, carStock } from '../apis/api';
 import Services from '../Components/Services';
 import Contact from '../Components/Contact';
@@ -14,13 +12,12 @@ import Swipeslider from '../Components/Swipeslider';
 import Vehicle from '../Components/Vehicle';
 import Review from '../Components/Review';
 
-function Home({ authenticated, email }) {
+function Home() {
     // if(!authenticated) {
     //     return <Redirect to="/" />
     // }
     return (
         <>
-            <Header email={email} />
             <div className="Home">
                 <section className="hero-container">
                     <div className="menu-side">
@@ -69,7 +66,6 @@ function Home({ authenticated, email }) {
                 </section>
 
                 <Contact />
-                <Footer />
             </div>
         </>
     )

@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
 import { useLocation, useParams } from "react-router-dom";
-import Footer from './Footer';
-import Header from './Header';
 import './Product.css';
 import '../App.css';
 import { MdAddShoppingCart, MdStars } from 'react-icons/md';
 import Stars from './Stars';
 import { GiQueenCrown } from "react-icons/gi";
 import { useAuth } from "../Context/ContextApi";
-// import {carStock} from "../apis/api";
 
 function Product() {
 
@@ -29,7 +26,6 @@ function Product() {
 
     return (
         <>
-            <Header />
             <section className="product" key={id}>
                 <div className="product-container-left">
                     <div className="product-image">
@@ -73,7 +69,6 @@ function Product() {
                 <div className="product-container-right">
                 </div>
             </section>
-            <Footer />
         </>
     )
 }

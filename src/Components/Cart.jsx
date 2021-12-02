@@ -1,16 +1,13 @@
 import React from 'react'
 import './Cart.css';
-import { useAuth } from "../Context/ContextApi";
-import Header from './Header';
-import Footer from './Footer';
+//import { useAuth } from "../Context/ContextApi";
 
 function Cart() {
-    const { setCart, cart } = useAuth();
-    const cartItem = JSON.parse(localStorage.getItem('cart'));
-    const totalPrice = cartItem.reduce((acc, curr) => acc + curr.price);
+    //const { setCart, cart } = useAuth();
+    //const cartItem = JSON.parse(localStorage.getItem('cart'));
+    //const totalPrice = cartItem.reduce((acc, curr) => acc + curr.price);
     return (
         <>
-            <Header />
             <div className="cart-container">
                 <div className="cart-table">
                     <section className="table-section">
@@ -54,7 +51,6 @@ function Cart() {
                     </section>
                 </div>
             </div>
-            <Footer />
         </>
     )
 }

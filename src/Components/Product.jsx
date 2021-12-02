@@ -24,6 +24,18 @@ function Product() {
         console.log(cart)
     }, [cart]);
 
+    // check if the product is already in the cart
+    const isInCart = (id) => {
+        return cart.some(product => product.id === id);
+    }
+
+    //delete item from cart array
+    const handleDelete = () => {
+        const newCart = cart.filter(item => item.id !== id);
+        localStorage.setItem('cart', JSON.stringify(newCart));
+        setCart(newCart);
+    }
+
     return (
         <>
             <section className="product" key={id}>
@@ -55,9 +67,18 @@ function Product() {
                             <div className="product-shipping">
                                 + shipping from $ 7,000 to Central Business District
                             </div>
-                            <button onClick={addToCart} className="btn cart-button">
-                                <MdAddShoppingCart className="btn-icon" />
-                                <span>Add To Cart</span></button>
+                            {
+                                isInCart(id) ? (
+                                    <button onClick={handleDelete} className="btn-remove">
+                                        <span>Remove From Cart</span>
+                                    </button>
+                                ) : (
+                                    <button onClick={addToCart} className="btn cart-button">
+                                        <MdAddShoppingCart className="btn-icon" />
+                                        <span>Add To Cart</span></button>
+                                )
+                            }
+
                         </div>
                         <div className="promotions">
                             <p><GiQueenCrown className="promotion-icons" /> <span>Get Free Delivery on your next order with WalkerAuto</span></p>

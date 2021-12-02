@@ -6,13 +6,14 @@ import { AiOutlineDelete } from 'react-icons/ai'
 import { FiShoppingCart } from 'react-icons/fi'
 
 function Cart() {
-    const { cart } = useAuth();
+    const { cart, setCart } = useAuth();
     const total = cart?.reduce((total, item) => total + item.price, 0);
 
     //delete item from cart array
     const handleDelete = (id) => {
         const newCart = cart.filter(item => item.id !== id);
         localStorage.setItem('cart', JSON.stringify(newCart));
+        setCart(newCart);
     }
 
 
@@ -22,8 +23,17 @@ function Cart() {
             <div className="cart-container">
                 <div className="cart-table">
                     <div className="cart-table-header">
-                        <FiShoppingCart size="20" />
-                        <h2>Your Cart</h2>
+                        {
+                            cart?.length > 0 ? (
+                                <>
+                                    <FiShoppingCart size="20" />
+                                    <h2>Your Cart</h2>
+                                </>
+                            ) : (
+                                <>
+                                </>
+                            )
+                        }
                     </div>
                     <section className="table-section">
                         {
@@ -58,7 +68,9 @@ function Cart() {
                                                     maximumFractionDigits: 0,
                                                 })}</td>
                                                 <td>
-                                                    <button className="btn-delete" onClick={handleDelete(index)}>
+                                                    <button className="btn-delete" onClick={
+                                                        () => handleDelete(item.id)
+                                                    }>
                                                         <AiOutlineDelete />
                                                     </button>
                                                 </td>

@@ -14,25 +14,41 @@
     margin-top: -1rem;
 }
 
+.cart-table {
+    background-color: white;
+}
+
+.table-cart {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 1rem;
+    background-color: white;
+}
+
 .cart-buttons {
     display: flex;
     gap: 1rem;
 }
 
-.continue-btn, .checkout-btn {
+.continue-btn,
+.checkout-btn {
     padding: .7rem 2rem;
     text-transform: uppercase;
     font-weight: 700;
 }
+
 .continue-btn {
     color: orange;
     background-color: white;
     box-shadow: 5px 5px 5px rgba(148, 144, 144, 0.24), 0 5px 5px rgba(189, 183, 183, 0.24);
 }
+
 .checkout-btn {
     background-color: rgb(250, 166, 10);
     color: white;
 }
+
 .checkout-btn:hover {
     background-color: darkorange;
 }
@@ -61,6 +77,7 @@
     font-weight: 700;
     font-size: 18px;
 }
+
 .contain-total p {
     font-family: 700;
     font-size: 18px;
@@ -73,4 +90,52 @@
     font-size: 13px;
     color: rgb(86, 87, 88);
     padding-right: 10px;
+}
+
+.empty-cart {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    flex-direction: column;
+}
+
+.table-body,
+.table-head {
+    text-align: left;
+}
+
+.table-head {
+    font-weight: 700;
+    font-size: 12px;
+    color: rgb(86, 87, 88);
+}
+
+.btn-delete {
+    background-color: rgb(250, 166, 10);
+    color: white;
+    border: none;
+    padding: .1rem .5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.table-body tr td {
+    padding: .1rem 0 !important;
+}
+
+.cart-table-header {
+    margin: 1rem 0 0 7rem;
+    display: flex;
+}
+
+.cart-table-header h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(86, 87, 88);
+    margin-left: .5rem;
 }

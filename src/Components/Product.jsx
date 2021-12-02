@@ -15,7 +15,7 @@ function Product() {
     const { id } = useParams();
 
     const addToCart = () => {
-        const product = { id: id, name: vehicle.carName, price: vehicle.price, image: vehicle.image };
+        const product = { id: id, name: vehicle.carName, quantity: 1, price: vehicle.price, image: vehicle.image };
         setCart(currCart => [...currCart, product]);
     }
 

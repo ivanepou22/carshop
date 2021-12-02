@@ -30,7 +30,7 @@ function Header() {
             <Link to="/" className="logo"> <span>Walker</span>Auto </Link>
             <div className="header-container">
 
-                <form action="">
+                <form>
                     <input type="text" placeholder="Search Cars, Car Parts, Brands and Categories" />
                     <input type="submit" value="Search" />
                 </form>
@@ -138,7 +138,7 @@ function Header() {
                                 <AiOutlineShoppingCart className="header-icons" />
                                 <span className="cart-quantity">
                                     {
-                                        cart.length
+                                        cart?.length
                                     }
                                 </span>
                                 <RiArrowDownSLine className="header-icons-second" />

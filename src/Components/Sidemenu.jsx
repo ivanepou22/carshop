@@ -14,23 +14,24 @@ import {
 } from "react-icons/si";
 import { GiHorseHead } from "react-icons/gi";
 import { BiShieldQuarter } from "react-icons/bi"
+import { Link } from 'react-router-dom';
 
 function Sidemenu() {
     return (
         <div className="Sidemenu">
             <ul>
-                <li><a href="/#"><GiHorseHead />Ferari</a></li>
-                <li><a href="/#"><SiBugatti />Bugatti</a></li>
-                <li><a href="/#"><SiFord />Ford</a></li>
-                <li><a href="/#"><SiMercedes /> Mercedes Benz</a></li>
-                <li><a href="/#"><SiHonda />Honda</a></li>
-                <li><a href="/#"><SiBmw />BMW</a></li>
-                <li><a href="/#"><SiAudi />Audi</a></li>
-                <li><a href="/#"><SiNissan />Nissan</a></li>
-                <li><a href="/#"><SiLamborghini />Lamborghini</a></li>
-                <li><a href="/#"><BiShieldQuarter />Porche</a></li>
-                <li><a href="/#"><SiVolkswagen />Volkswagen</a></li>
-                <li><a href="/#"><SiTesla />Tesla</a></li>
+                <li><Link to="/#"><GiHorseHead />Ferari</Link></li>
+                <li><Link to="/#"><SiBugatti />Bugatti</Link></li>
+                <li><Link to="/#"><SiFord />Ford</Link></li>
+                <li><Link to="/#"><SiMercedes /> Mercedes Benz</Link></li>
+                <li><Link to="/#"><SiHonda />Honda</Link></li>
+                <li><Link to="/#"><SiBmw />BMW</Link></li>
+                <li><Link to="/#"><SiAudi />Audi</Link></li>
+                <li><Link to="/#"><SiNissan />Nissan</Link></li>
+                <li><Link to="/#"><SiLamborghini />Lamborghini</Link></li>
+                <li><Link to="/#"><BiShieldQuarter />Porche</Link></li>
+                <li><Link to="/#"><SiVolkswagen />Volkswagen</Link></li>
+                <li><Link to="/#"><SiTesla />Tesla</Link></li>
             </ul>
         </div>
     )

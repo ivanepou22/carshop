@@ -9,11 +9,12 @@ function Cart() {
     const { cart } = useAuth();
     const total = cart?.reduce((total, item) => total + item.price, 0);
 
-    //delete item from cart
+    //delete item from cart array
     const handleDelete = (id) => {
         const newCart = cart.filter(item => item.id !== id);
         localStorage.setItem('cart', JSON.stringify(newCart));
     }
+
 
 
     return (
@@ -31,6 +32,7 @@ function Cart() {
                                     <thead className="table-head">
                                         <tr>
                                             <th>#</th>
+                                            <th>Image</th>
                                             <th>Item</th>
                                             <th>Quantity</th>
                                             <th>Unit Price</th>
@@ -42,6 +44,7 @@ function Cart() {
                                         {cart?.map((item, index) => (
                                             <tr key={index} className="table-tr">
                                                 <td>{index + 1}</td>
+                                                <td><img src={item.image} alt="product" className="product-image" /></td>
                                                 <td>{item.name}</td>
                                                 <td>{item.quantity}</td>
                                                 <td>{item.price.toLocaleString('en-US', {
@@ -55,7 +58,7 @@ function Cart() {
                                                     maximumFractionDigits: 0,
                                                 })}</td>
                                                 <td>
-                                                    <button className="btn-delete" onClick={handleDelete}>
+                                                    <button className="btn-delete" onClick={handleDelete(index)}>
                                                         <AiOutlineDelete />
                                                     </button>
                                                 </td>

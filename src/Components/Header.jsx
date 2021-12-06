@@ -1,20 +1,23 @@
 import React from 'react'
 import './Header.css';
-import { AiOutlineShoppingCart, AiOutlineMenu, AiOutlineHeart, AiOutlineMail } from 'react-icons/ai'
+import { AiOutlineShoppingCart, AiOutlineMenu, AiOutlineHeart, AiOutlineMail, AiOutlineDelete } from 'react-icons/ai'
 import { BiHelpCircle, BiBriefcaseAlt2, BiUserCheck } from 'react-icons/bi'
 import { RiUser2Line, RiLiveLine, RiArrowDownSLine, RiMoneyDollarCircleLine } from 'react-icons/ri'
 import { HiOutlineUser } from 'react-icons/hi';
 import { useAuth } from "../Context/ContextApi";
 import { Link } from 'react-router-dom';
+import { FcEmptyTrash } from 'react-icons/fc'
+
 //import { useHistory } from "react-router-dom";
 
 
 function Header() {
     //using the contextApi
-    const { setUser, cart } = useAuth();
+    const { setUser, cart, setCart } = useAuth();
     //const history = useHistory();
     const user = JSON.parse(localStorage.getItem("user"));
     const cartItem = JSON.parse(localStorage.getItem("cart"));
+    const total = cart?.reduce((total, item) => total + item.price, 0);
 
     console.log(cart)
 
@@ -24,6 +27,12 @@ function Header() {
         setUser(null)
     }
     console.log(cartItem);
+    //delete item from cart array
+    const handleDelete = (id) => {
+        const newCart = cart.filter(item => item.id !== id);
+        localStorage.setItem('cart', JSON.stringify(newCart));
+        setCart(newCart);
+    }
     return (
         <header className="header">
             <div id="menu-btn"> <AiOutlineMenu /></div>
@@ -145,32 +154,77 @@ function Header() {
                             </div>
                             <ul className="nav__listitemdrop cart-dropdown">
                                 {
-                                    cart.map((item, index) => (
-                                        <li key={item.id} className="item-li">
-                                            <div className="item-info">
-                                                <div className="item-desc">
-                                                    {item.name}
+                                    cart?.length !== 0 ? (
+                                        <div className="cart-header">
+                                            <h2>Your Cart Summary</h2>
+                                        </div>
+                                    ) : (
+                                        <>
+                                        </>
+                                    )
+                                }
+
+                                {
+                                    cart.length !== 0 ? (
+                                        cart.map((item, index) => (
+                                            <li key={item.id} className="item-li">
+                                                <div className="item-info">
+                                                    <div className="item-desc">
+                                                        {item.name}
+                                                    </div>
+                                                    <div className="item-price">
+                                                        {
+                                                            item.price.toLocaleString('en-US', {
+                                                                style: 'currency',
+                                                                currency: 'USD',
+                                                                maximumFractionDigits: 0,
+                                                            })
+                                                        }
+                                                    </div>
+                                                    <div className="item-action">
+                                                        <button className="btn-delete" >
+                                                            <AiOutlineDelete onClick={
+                                                                () => handleDelete(item.id)
+                                                            } />
+                                                        </button>
+                                                    </div>
+
                                                 </div>
-                                                <div className="item-price">
-                                                    {
-                                                        item.price.toLocaleString('en-US', {
-                                                            style: 'currency',
-                                                            currency: 'USD',
-                                                            maximumFractionDigits: 0,
-                                                        })
-                                                    }
+
+                                            </li>
+                                        ))
+                                    ) : (
+                                        <div className="empty-cart">
+                                            <FcEmptyTrash size="50" />
+                                            <p>Your Cart is Empty</p>
+                                        </div>
+                                    )
+                                }
+                                {
+                                    cart?.length !== 0 ? (
+                                        <>
+                                            <div className="cart-subtotal">
+                                                <h3>Total</h3>
+                                                <h3>{total.toLocaleString('en-US', {
+                                                    style: 'currency',
+                                                    currency: 'USD',
+                                                    maximumFractionDigits: 0,
+                                                })}</h3>
+                                            </div>
+                                            <div className='button-dropdown'>
+                                                <div className="li-contain go-to-cart">
+                                                    <Link to="/cart">
+                                                        <span>Go to Cart</span>
+                                                    </Link>
                                                 </div>
                                             </div>
-                                        </li>
-                                    ))
+                                        </>
+                                    ) : (
+                                        <>
+                                        </>
+                                    )
                                 }
-                                <div className='button-dropdown'>
-                                    <div className="li-contain go-to-cart">
-                                        <Link to="/cart">
-                                            <span>Go to Cart</span>
-                                        </Link>
-                                    </div>
-                                </div>
+
                             </ul>
                         </li>
                     </ul>

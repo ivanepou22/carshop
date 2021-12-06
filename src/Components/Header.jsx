@@ -13,9 +13,9 @@ import { FcEmptyTrash } from 'react-icons/fc'
 
 function Header() {
     //using the contextApi
-    const { setUser, cart, setCart } = useAuth();
+    const { setUser, user, cart, setCart } = useAuth();
     //const history = useHistory();
-    const user = JSON.parse(localStorage.getItem("user"));
+    // const user = JSON.parse(localStorage.getItem("user"));
     const cartItem = JSON.parse(localStorage.getItem("cart"));
     const total = cart?.reduce((total, item) => total + item.price, 0);
 
@@ -171,6 +171,11 @@ function Header() {
                                                 <div className="item-info">
                                                     <div className="item-desc">
                                                         {item.name}
+                                                    </div>
+                                                    <div className="item-quantity">
+                                                        {
+                                                            item.quantity.toFixed(2)
+                                                        }
                                                     </div>
                                                     <div className="item-price">
                                                         {
